@@ -6,10 +6,6 @@ import { getCabin, getCabins } from "@/app/_lib/data-service";
 import Image from "next/image";
 import { Suspense } from "react";
 
-// export const metadata = {
-//   title: "Cabin",
-// };
-
 export async function generateMetadata({ params }) {
   const { name } = await getCabin(params.cabinId);
   return { title: `Cabin ${name}` };

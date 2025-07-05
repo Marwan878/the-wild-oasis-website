@@ -16,7 +16,7 @@ function Filter() {
   }
 
   return (
-    <div className="border border-primary-800 flex">
+    <div className="border border-primary-800 flex flex-wrap sm:flex-nowrap">
       <Button
         filter="all"
         handleFilter={handleFilter}
@@ -29,21 +29,24 @@ function Filter() {
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
-        2&mdash;3 guests
+        <span className="hidden sm:inline">2&mdash;3 guests</span>
+        <span className="sm:hidden">2-3</span>
       </Button>
       <Button
         filter="medium"
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
-        4&mdash;7 guests
+        <span className="hidden sm:inline">4&mdash;7 guests</span>
+        <span className="sm:hidden">4-7</span>
       </Button>
       <Button
         filter="large"
         handleFilter={handleFilter}
         activeFilter={activeFilter}
       >
-        8&mdash;12 guests
+        <span className="hidden sm:inline">8&mdash;12 guests</span>
+        <span className="sm:hidden">8-12</span>
       </Button>
     </div>
   );
@@ -52,7 +55,7 @@ function Filter() {
 function Button({ filter, handleFilter, activeFilter, children }) {
   return (
     <button
-      className={`px-5 py-2 hover:bg-primary-700 ${
+      className={`px-3 sm:px-5 py-2 hover:bg-primary-700 flex-1 sm:flex-initial text-sm sm:text-base ${
         filter === activeFilter ? "bg-primary-700 text-primary-50" : ""
       }`}
       onClick={() => handleFilter(filter)}

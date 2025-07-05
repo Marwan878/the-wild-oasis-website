@@ -13,10 +13,10 @@ export default function Page({ searchParams }) {
 
   return (
     <div>
-      <h1 className="text-4xl mb-5 text-accent-400 font-medium">
+      <h1 className="text-2xl sm:text-3xl lg:text-4xl mb-4 sm:mb-5 text-accent-400 font-medium">
         Our Luxury Cabins
       </h1>
-      <p className="text-primary-200 text-lg mb-10">
+      <p className="text-primary-200 text-base sm:text-lg mb-8 sm:mb-10">
         Cozy yet luxurious cabins, located right in the heart of the Italian
         Dolomites. Imagine waking up to beautiful mountain views, spending your
         days exploring the dark forests around, or just relaxing in your private
@@ -25,7 +25,7 @@ export default function Page({ searchParams }) {
         Welcome to paradise.
       </p>
 
-      <div className="flex justify-end mb-8">
+      <div className="flex justify-center sm:justify-end mb-6 sm:mb-8">
         <Filter />
       </div>
 
