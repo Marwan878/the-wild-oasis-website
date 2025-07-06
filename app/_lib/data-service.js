@@ -6,18 +6,16 @@ import { supabase } from "./supabase";
 // GET
 
 export async function getCabin(id) {
+  console.log(typeof id);
   const { data, error } = await supabase
     .from("cabins")
     .select("*")
-    .eq("id", id)
+    .eq("id", +id)
     .single();
 
-  // For testing
-  // await new Promise((res) => setTimeout(res, 2000));
-
   if (error) {
-    console.error(error);
-    notFound();
+    console.error("Error fetching cabin", error);
+    return notFound();
   }
 
   return data;
@@ -43,9 +41,6 @@ export const getCabins = async function () {
     .select("id, name, maxCapacity, regularPrice, discount, image")
     .order("name");
 
-  // For testing
-  // await new Promise((res) => setTimeout(res, 2000));
-
   if (error) {
     console.error(error);
     throw new Error("Cabins could not be loaded");
@@ -56,7 +51,7 @@ export const getCabins = async function () {
 
 // Guests are uniquely identified by their email address
 export async function getGuest(email) {
-  const { data, error } = await supabase
+  const { data } = await supabase
     .from("guests")
     .select("*")
     .eq("email", email)
@@ -67,7 +62,7 @@ export async function getGuest(email) {
 }
 
 export async function getBooking(id) {
-  const { data, error, count } = await supabase
+  const { data, error } = await supabase
     .from("bookings")
     .select("*")
     .eq("id", id)
@@ -82,9 +77,8 @@ export async function getBooking(id) {
 }
 
 export async function getBookings(guestId) {
-  const { data, error, count } = await supabase
+  const { data, error } = await supabase
     .from("bookings")
-    // We actually also need data on the cabins as well. But let's ONLY take the data that we actually need, in order to reduce downloaded data.
     .select(
       "id, created_at, startDate, endDate, numNights, numGuests, totalPrice, guestId, cabinId, cabins(name, image)"
     )
@@ -131,8 +125,6 @@ export async function getBookedDatesByCabinId(cabinId) {
 
 export async function getSettings() {
   const { data, error } = await supabase.from("settings").select("*").single();
-
-  // await new Promise((res) => setTimeout(res, 5000));
 
   if (error) {
     console.error(error);

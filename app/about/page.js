@@ -44,49 +44,8 @@ export default async function Page() {
           alt="Family sitting around a fire pit in front of cabin"
           placeholder="blur"
           quality={80}
-          className="rounded-lg"
+          className="rounded-lg object-cover"
         />
-      </div>
-
-      <div className="relative aspect-square lg:col-span-2 h-64 sm:h-80 lg:h-auto">
-        <Image
-          src="/about-2.jpg"
-          fill
-          className="object-cover rounded-lg"
-          alt="Family that manages The Wild Oasis"
-        />
-      </div>
-
-      <div className="lg:col-span-3">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl mb-6 lg:mb-10 text-accent-400 font-medium">
-          Managed by our family since 1962
-        </h1>
-
-        <div className="space-y-6 lg:space-y-8">
-          <p>
-            Since 1962, The Wild Oasis has been a cherished family-run retreat.
-            Started by our grandparents, this haven has been nurtured with love
-            and care, passing down through our family as a testament to our
-            dedication to creating a warm, welcoming environment.
-          </p>
-          <p>
-            Over the years, we&apos;ve maintained the essence of The Wild Oasis,
-            blending the timeless beauty of the mountains with the personal
-            touch only a family business can offer. Here, you&apos;re not just a
-            guest; you&apos;re part of our extended family. So join us at The
-            Wild Oasis soon, where tradition meets tranquility, and every visit
-            is like coming home.
-          </p>
-
-          <div>
-            <a
-              href="/cabins"
-              className="inline-block mt-4 bg-accent-500 px-4 sm:px-6 lg:px-8 py-3 sm:py-4 lg:py-5 text-primary-800 text-sm sm:text-base lg:text-lg font-semibold hover:bg-accent-600 transition-all rounded"
-            >
-              Explore our luxury cabins
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );
