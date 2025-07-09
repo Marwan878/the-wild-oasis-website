@@ -186,4 +186,4 @@ The application is ready for deployment on platforms like:
 
 ---
 
-**🐙 GitHub**: [https://github.com/Marwan878]
+**🐙 GitHub**: https://github.com/Marwan878
